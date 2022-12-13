@@ -4,6 +4,7 @@ import fluoride from "../../assets/images/fluoride.png";
 import cavity from "../../assets/images/cavity.png";
 import whitening from "../../assets/images/whitening.png";
 import treatment from "../../assets/images/treatment.png";
+import PrimaryButton from "../Shared/PrimaryButton";
 
 const Services = () => {
   const services = [
@@ -31,7 +32,7 @@ const Services = () => {
   ];
 
   return (
-    <section className=" my-44">
+    <section className=" my-44 px-12">
       <div className="text-center">
         <h1 className="text-3xl text-secondary uppercase font-bold">Our services</h1>
         <h1 className="text-5xl mt-4">Services We Provide</h1>
@@ -43,7 +44,7 @@ const Services = () => {
       </div>
       <div className="hero min-h-screen py-20">
         <div className="hero-content flex-col lg:flex-row gap-20">
-          <img src={treatment} alt="" className="max-w-lg rounded-lg shadow-2xl" />
+          <img src={treatment} alt="" className="max-w-sm lg:max-w-lg rounded-lg shadow-2xl" />
           <div>
             <h1 className="text-5xl font-bold">Exceptional Dental Care, on Your Terms</h1>
             <p className="py-6 text-xl my-4">
@@ -53,9 +54,7 @@ const Services = () => {
               will keep your mouth healthy between visits to our practice where professional cleaning and
               close check-ups are completed to prevent gum disease from occurring.
             </p>
-            <button className="btn btn-primary text-white font-bold text-xl bg-gradient-to-r from-secondary to-primary">
-              Get Started
-            </button>
+            <PrimaryButton>Get Started</PrimaryButton>
           </div>
         </div>
       </div>
