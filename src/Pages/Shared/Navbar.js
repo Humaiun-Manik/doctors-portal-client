@@ -26,8 +26,8 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 px-8">
-      <div className="navbar-start">
+    <header className="navbar justify-between bg-base-100 border-b border-primary">
+      <div className="navbar-start w-1/4">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
             <svg
@@ -47,12 +47,14 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-3xl hover:bg-white">Doctors Portal</a>
+        <a href="'" className="btn btn-ghost normal-case text-3xl hover:bg-white">
+          Doctors Portal
+        </a>
       </div>
-      <div className="navbar-end hidden lg:flex">
+      <div className="navbar-end hidden lg:flex w-auto">
         <ul className="menu menu-horizontal px-1">{menuItems}</ul>
       </div>
-    </div>
+    </header>
   );
 };
 

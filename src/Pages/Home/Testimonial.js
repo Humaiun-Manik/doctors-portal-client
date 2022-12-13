@@ -30,17 +30,17 @@ const Testimonial = () => {
     },
   ];
   return (
-    <section className="px-12">
+    <section className="px-5">
       <div className="flex justify-between my-24">
         <div>
-          <h4 className="text-2xl text-secondary font-bold my-3">Testimonial</h4>
+          <h4 className="text-xl text-secondary font-bold my-3">Testimonial</h4>
           <h2 className="text-4xl">What Our Patients Says</h2>
         </div>
         <div>
           <img className="w-28 lg:w-48" src={quote} alt="" />
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {reviews.map((review) => (
           <Review key={review._id} review={review}></Review>
         ))}

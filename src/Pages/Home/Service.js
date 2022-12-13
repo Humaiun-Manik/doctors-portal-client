@@ -6,11 +6,11 @@ const Service = ({ service }) => {
   return (
     <div className="card lg:max-w-lg bg-base-100 shadow-xl mx-auto">
       <figure className="px-10 pt-10">
-        <img src={img} alt="Shoes" className="rounded-xl" />
+        <img src={img} alt="" className="rounded-xl w-28" />
       </figure>
       <div className="card-body items-center text-center">
-        <h2 className="card-title text-2xl my-3">{name}</h2>
-        <p className="text-xl text-ellipsis">{description}</p>
+        <h2 className="card-title text-xl my-2">{name}</h2>
+        <p className="text-base text-ellipsis">{description}</p>
       </div>
     </div>
   );

@@ -32,10 +32,10 @@ const Services = () => {
   ];
 
   return (
-    <section className=" my-44 px-12">
+    <section className=" my-44 px-5">
       <div className="text-center">
-        <h1 className="text-3xl text-secondary uppercase font-bold">Our services</h1>
-        <h1 className="text-5xl mt-4">Services We Provide</h1>
+        <h1 className="text-xl text-secondary uppercase font-bold">Our services</h1>
+        <h1 className="text-4xl mt-4">Services We Provide</h1>
       </div>
       <div className="grid sm:grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-10 mt-20">
         {services.map((service) => (
@@ -47,7 +47,7 @@ const Services = () => {
           <img src={treatment} alt="" className="max-w-sm lg:max-w-lg rounded-lg shadow-2xl" />
           <div>
             <h1 className="text-5xl font-bold">Exceptional Dental Care, on Your Terms</h1>
-            <p className="py-6 text-xl my-4">
+            <p className="py-6 text-base my-4">
               Gum disease can be caused by a number of factors including poor oral hygiene, loss of teeth as
               well as some health related factors such as stress, diabetes and pregnancy. The best way to
               prevent gum disease is with a comprehensive oral regime of brushing, flossing and rinsing. This
