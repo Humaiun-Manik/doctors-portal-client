@@ -2,10 +2,11 @@ import React from "react";
 import chair from "../../assets/images/chair.png";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
+import bg from "../../assets/images/bg.png";
 
 const AppointmentBanner = ({ date, setDate }) => {
   return (
-    <section className="hero min-h-screen">
+    <section style={{ background: `url(${bg})`, backgroundSize: "cover" }} className="hero min-h-screen">
       <div className="hero-content flex-col md:flex-row-reverse justify-between w-3/4 p-0">
         <img src={chair} className="max-w-sm md:max-w-lg rounded-lg shadow-2xl" alt="Dental chair" />
         <div className="mx-auto">
