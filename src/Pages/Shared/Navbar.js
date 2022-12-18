@@ -28,6 +28,11 @@ const Navbar = () => {
       <li className="text-xl hover:bg-accent hover:text-white rounded-lg">
         <Link to="/contact">Contact Us</Link>
       </li>
+      {user && (
+        <li className="text-xl hover:bg-accent hover:text-white rounded-lg">
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
+      )}
       <li className="text-xl hover:bg-accent hover:text-white rounded-lg">
         {user ? (
           <button onClick={logOut} className="btn btn-ghost text-lg flex justify-center items-center">
@@ -68,6 +73,19 @@ const Navbar = () => {
       </div>
       <div className="navbar-end hidden lg:flex w-auto">
         <ul className="menu menu-horizontal px-1">{menuItems}</ul>
+      </div>
+      <div className="navbar-end lg:hidden">
+        <label htmlFor="dashboard-sidebar" tabIndex="1" className="btn btn-ghost lg:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </label>
       </div>
     </header>
   );
