@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import useToken from "../../hooks/useToken";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
@@ -21,16 +22,17 @@ const Login = () => {
   } = useForm();
   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
   const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
+  const [token] = useToken(user || googleUser);
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
   let signInError;
 
   useEffect(() => {
-    if (user || googleUser) {
+    if (token) {
       navigate(from, { replace: true });
     }
-  }, [user, googleUser, from, navigate]);
+  }, [token, from, navigate]);
 
   if (loading || googleLoading || sending) {
     return <Loading></Loading>;

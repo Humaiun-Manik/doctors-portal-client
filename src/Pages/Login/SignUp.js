@@ -8,6 +8,7 @@ import {
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
 import { Link, useNavigate } from "react-router-dom";
+import useToken from "../../hooks/useToken";
 
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth, {
@@ -21,6 +22,7 @@ const SignUp = () => {
     handleSubmit,
   } = useForm();
   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+  const [token] = useToken(user || googleUser);
   const navigate = useNavigate();
   let signInError;
 
@@ -36,15 +38,14 @@ const SignUp = () => {
     );
   }
 
-  if (user || googleUser) {
-    console.log(googleUser || user);
+  if (token) {
+    navigate("/appointment");
   }
 
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data?.email, data?.password);
     await updateProfile({ displayName: data?.name });
     reset();
-    navigate("/appointment");
   };
 
   return (
