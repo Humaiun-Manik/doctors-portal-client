@@ -11,29 +11,45 @@ const Dashboard = () => {
     <div className="drawer drawer-mobile">
       <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
-        {/* <!-- Page content here --> */}
-        <h1 className="text-secondary text-3xl text-center my-5 underline underline-offset-8">
-          Welcome to your Dashboard
-        </h1>
         <Outlet></Outlet>
       </div>
-      <div className="drawer-side">
+      <div className="drawer-side  mt-4">
         <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-72 bg-base-100 text-base-content">
+        <ul className="menu p-4 w-72  bg-base-100  text-xl font-bold text-gray-500">
           {/* <!-- Sidebar content here --> */}
           <li>
-            <Link to="/dashboard">My Appointment</Link>
+            <Link className="focus:text-black bg-white" to="/dashboard">
+              My Appointment
+            </Link>
           </li>
           <li>
-            <Link to="/dashboard/review">Review</Link>
+            <Link className="focus:text-black bg-white" to="/dashboard/review">
+              Review
+            </Link>
           </li>
           <li>
-            <Link to="/dashboard/history">History</Link>
+            <Link className="focus:text-black bg-white" to="/dashboard/history">
+              History
+            </Link>
           </li>
           {admin && (
-            <li>
-              <Link to="/dashboard/users">All Users</Link>
-            </li>
+            <>
+              <li>
+                <Link className="focus:text-black bg-white" to="/dashboard/users">
+                  All Users
+                </Link>
+              </li>
+              <li>
+                <Link className="focus:text-black bg-white" to="/dashboard/addDoctor">
+                  Add a Doctor
+                </Link>
+              </li>
+              <li>
+                <Link className="focus:text-black bg-white" to="/dashboard/manageDoctors">
+                  Manage Doctors
+                </Link>
+              </li>
+            </>
           )}
         </ul>
       </div>
