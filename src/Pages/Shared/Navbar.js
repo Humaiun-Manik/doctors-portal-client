@@ -14,33 +14,47 @@ const Navbar = () => {
 
   const menuItems = (
     <>
-      <li className="text-xl hover:bg-accent hover:text-white rounded-lg">
-        <Link to="/home">Home</Link>
+      <li className="text-xl rounded-lg">
+        <Link className="focus:bg-accent focus:text-white" to="/home">
+          Home
+        </Link>
       </li>
-      <li className="text-xl hover:bg-accent hover:text-white rounded-lg">
-        <Link to="/about">About</Link>
+      <li className="text-xl rounded-lg">
+        <Link className="focus:bg-accent focus:text-white" to="/about">
+          About
+        </Link>
       </li>
-      <li className="text-xl hover:bg-accent hover:text-white rounded-lg">
-        <Link to="/appointment">Appointment</Link>
+      <li className="text-xl rounded-lg">
+        <Link className="focus:bg-accent focus:text-white" to="/appointment">
+          Appointment
+        </Link>
       </li>
-      <li className="text-xl hover:bg-accent hover:text-white rounded-lg">
-        <Link to="/reviews">Reviews</Link>
+      <li className="text-xl rounded-lg">
+        <Link className="focus:bg-accent focus:text-white" to="/reviews">
+          Reviews
+        </Link>
       </li>
-      <li className="text-xl hover:bg-accent hover:text-white rounded-lg">
-        <Link to="/contact">Contact Us</Link>
+      <li className="text-xl rounded-lg">
+        <Link className="focus:bg-accent focus:text-white" to="/contact">
+          Contact Us
+        </Link>
       </li>
       {user && (
-        <li className="text-xl hover:bg-accent hover:text-white rounded-lg">
-          <Link to="/dashboard">Dashboard</Link>
+        <li className="text-xl rounded-lg">
+          <Link className="focus:bg-accent focus:text-white" to="/dashboard">
+            Dashboard
+          </Link>
         </li>
       )}
-      <li className="text-xl hover:bg-accent hover:text-white rounded-lg">
+      <li className="text-xl rounded-lg">
         {user ? (
           <button onClick={logOut} className="btn btn-ghost text-lg flex justify-center items-center">
             Sign Out
           </button>
         ) : (
-          <Link to="/login">Login</Link>
+          <Link className="focus:bg-accent focus:text-white" to="/login">
+            Login
+          </Link>
         )}
       </li>
     </>

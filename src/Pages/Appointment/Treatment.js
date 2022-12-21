@@ -2,6 +2,7 @@ import React from "react";
 
 const Treatment = ({ treatment, setService }) => {
   const { name, slots } = treatment;
+
   return (
     <div className="card lg:max-w-lg">
       <div className="card-body items-center text-center">

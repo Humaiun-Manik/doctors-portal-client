@@ -2,6 +2,7 @@ import React from "react";
 import doctorSmall from "../../assets/images/doctor-small.png";
 import appointment from "../../assets/images/appointment.png";
 import PrimaryButton from "../Shared/PrimaryButton";
+import { Link } from "react-router-dom";
 
 const MakeAppointment = () => {
   return (
@@ -18,7 +19,9 @@ const MakeAppointment = () => {
           Plus, we make it easy for you to connect with the care you need with convenient appointment
           scheduling options for both new and existing patients.
         </p>
-        <PrimaryButton>Get Started</PrimaryButton>
+        <Link to="/appointment">
+          <PrimaryButton>Get Started</PrimaryButton>
+        </Link>
       </div>
     </section>
   );

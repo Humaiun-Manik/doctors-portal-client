@@ -5,6 +5,7 @@ import cavity from "../../assets/images/cavity.png";
 import whitening from "../../assets/images/whitening.png";
 import treatment from "../../assets/images/treatment.png";
 import PrimaryButton from "../Shared/PrimaryButton";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -54,7 +55,9 @@ const Services = () => {
               will keep your mouth healthy between visits to our practice where professional cleaning and
               close check-ups are completed to prevent gum disease from occurring.
             </p>
-            <PrimaryButton>Get Started</PrimaryButton>
+            <Link to="/appointment">
+              <PrimaryButton>Get Started</PrimaryButton>
+            </Link>
           </div>
         </div>
       </div>

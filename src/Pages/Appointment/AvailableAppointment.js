@@ -25,7 +25,6 @@ const AvailableAppointment = ({ date }) => {
     <section>
       <div className="text-center mt-20">
         <h4 className="text-2xl text-secondary mb-3">Available Services on {format(date, "PPP")}</h4>
-        {/* <h4 className="text-2xl text-[#939393]">Please select a service.</h4> */}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-20">
         {treatment?.map((treatment) => (
