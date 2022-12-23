@@ -42,15 +42,6 @@ const Payment = () => {
           </div>
           <div className="card max-w-sm w-full lg:w-2/5 shadow-2xl bg-base-100">
             <div className="card-body">
-              {/* <div className="form-control my-5">
-                <input type="text" placeholder="Card Number" className="input input-bordered" />
-              </div>
-              <div className="form-control">
-                <input type="text" placeholder="MM/YY/CVC" className="input input-bordered" />
-              </div>
-              <div className="form-control mt-6">
-                <button className="btn text-2xl font-semibold capitalize">Pay</button>
-              </div> */}
               <Elements stripe={stripePromise}>
                 <CheckoutForm appointment={appointment} />
               </Elements>

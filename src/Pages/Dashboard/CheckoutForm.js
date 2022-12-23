@@ -4,12 +4,13 @@ import React, { useEffect, useState } from "react";
 const CheckoutForm = ({ appointment }) => {
   const stripe = useStripe();
   const elements = useElements();
+  const [processing, setProcessing] = useState(false);
   const [cardError, setCardError] = useState("");
   const [success, setSuccess] = useState("");
   const [transactionId, setTransactionId] = useState("");
   const [clientSecret, setClientSecret] = useState("");
 
-  const { patientName, patientEmail, price } = appointment;
+  const { _id, patientName, patientEmail, price } = appointment;
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
@@ -43,6 +44,8 @@ const CheckoutForm = ({ appointment }) => {
 
     setCardError(error?.message || "");
     setSuccess("");
+    setProcessing(true);
+
     // confirm card payment
     const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
@@ -56,10 +59,29 @@ const CheckoutForm = ({ appointment }) => {
 
     if (intentError) {
       setCardError(intentError?.message);
+      setProcessing(false);
     } else {
       setCardError("");
       setTransactionId(paymentIntent.id);
       setSuccess("Congrats! Your payment is completed.");
+
+      // store payment on database
+      const payment = {
+        appointment: _id,
+        transactionId: paymentIntent.id,
+      };
+      fetch(`http://localhost:5000/booking/${_id}`, {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: JSON.stringify(payment),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setProcessing(false);
+        });
     }
   };
 
@@ -70,12 +92,13 @@ const CheckoutForm = ({ appointment }) => {
         <button
           className="btn text-2xl font-semibold capitalize mt-8 w-full"
           type="submit"
-          disabled={!stripe || !elements || !clientSecret}
+          disabled={!stripe || !elements || !clientSecret || success}
         >
           Pay
         </button>
       </form>
       {cardError && <p className="text-base text-red-500">{cardError}</p>}
+      {processing === true && <p className="text-base text-primary">Processing...</p>}
       {success && (
         <div className="text-base font-semibold text-green-500">
           <p>{success}</p>
