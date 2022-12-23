@@ -1,7 +1,7 @@
 import React from "react";
 import { toast } from "react-toastify";
 
-const UserRow = ({ user, index, refetch }) => {
+const UserRow = ({ user, setUser, index, refetch }) => {
   const { email, role } = user;
 
   const makeAdmin = () => {
@@ -31,13 +31,19 @@ const UserRow = ({ user, index, refetch }) => {
       <td>{email}</td>
       <td>
         {role !== "admin" && (
-          <button onClick={makeAdmin} className="btn btn-sm">
+          <button onClick={makeAdmin} className="btn btn-sm hover:bg-green-700 border-0">
             Make Admin
           </button>
         )}
       </td>
       <td>
-        <button className="btn btn-sm">Remove User</button>
+        <label
+          onClick={() => setUser(user)}
+          htmlFor="my-modal-6"
+          className="btn btn-sm hover:bg-red-500 border-0"
+        >
+          Remove User
+        </label>
       </td>
     </tr>
   );

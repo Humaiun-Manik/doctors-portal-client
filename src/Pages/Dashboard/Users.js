@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
+import DeleteUserConfirmModule from "./DeleteUserConfirmModule";
 import UserRow from "./UserRow";
 
 const Users = () => {
+  const [user, setUser] = useState({});
   const {
     isLoading,
     data: users,
@@ -32,18 +34,19 @@ const Users = () => {
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Email</th>
+              <th>Add Admin</th>
+              <th>Delete User</th>
             </tr>
           </thead>
           <tbody>
             {users?.map((user, index) => (
-              <UserRow key={user._id} user={user} index={index} refetch={refetch}></UserRow>
+              <UserRow key={user._id} user={user} setUser={setUser} index={index} refetch={refetch}></UserRow>
             ))}
           </tbody>
         </table>
       </div>
+      <DeleteUserConfirmModule user={user} setUser={setUser} refetch={refetch}></DeleteUserConfirmModule>
     </section>
   );
 };

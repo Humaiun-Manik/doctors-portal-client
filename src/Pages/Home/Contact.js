@@ -4,7 +4,7 @@ import PrimaryButton from "../Shared/PrimaryButton";
 
 const Contact = () => {
   return (
-    <div style={{ backgroundImage: `url(${bg})` }} className="hero mt-40">
+    <section style={{ backgroundImage: `url(${bg})` }} className="hero mt-5">
       <div className="hero-content py-36">
         <div className="card flex-shrink-0 w-full sm:max-w-sm lg:max-w-lg text-center">
           <div className="card-body p-0">
@@ -27,7 +27,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

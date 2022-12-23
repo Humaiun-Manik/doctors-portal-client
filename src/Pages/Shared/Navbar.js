@@ -20,18 +20,8 @@ const Navbar = () => {
         </Link>
       </li>
       <li className="text-xl rounded-lg">
-        <Link className="focus:bg-accent focus:text-white" to="/about">
-          About
-        </Link>
-      </li>
-      <li className="text-xl rounded-lg">
         <Link className="focus:bg-accent focus:text-white" to="/appointment">
           Appointment
-        </Link>
-      </li>
-      <li className="text-xl rounded-lg">
-        <Link className="focus:bg-accent focus:text-white" to="/reviews">
-          Reviews
         </Link>
       </li>
       <li className="text-xl rounded-lg">
