@@ -23,18 +23,13 @@ const Dashboard = () => {
               My Appointment
             </Link>
           </li>
-          <li>
-            <Link className="focus:text-black bg-white" to="/dashboard/review">
-              Review
-            </Link>
-          </li>
-          <li>
-            <Link className="focus:text-black bg-white" to="/dashboard/history">
-              History
-            </Link>
-          </li>
           {admin && (
             <>
+              <li>
+                <Link className="focus:text-black bg-white" to="/dashboard/bookings">
+                  All Bookings
+                </Link>
+              </li>
               <li>
                 <Link className="focus:text-black bg-white" to="/dashboard/users">
                   All Users
@@ -52,6 +47,11 @@ const Dashboard = () => {
               </li>
             </>
           )}
+          <li>
+            <Link className="focus:text-black bg-white" to="/home">
+              Home
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

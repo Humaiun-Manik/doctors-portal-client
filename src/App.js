@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Appointment from "./Pages/Appointment/Appointment";
 import AddDoctor from "./Pages/Dashboard/AddDoctor";
+import AllBooking from "./Pages/Dashboard/AllBooking";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import ManageDoctors from "./Pages/Dashboard/ManageDoctors";
 import MyAppointment from "./Pages/Dashboard/MyAppointment";
@@ -43,6 +44,14 @@ function App() {
         >
           <Route index element={<MyAppointment />} />
           <Route path="payment/:id" element={<Payment />} />
+          <Route
+            path="bookings"
+            element={
+              <RequireAdmin>
+                <AllBooking />
+              </RequireAdmin>
+            }
+          />
           <Route
             path="users"
             element={

@@ -25,7 +25,7 @@ const ManageDoctors = () => {
   return (
     <section>
       <h1 className="text-2xl font-bold mt-11 mb-5">
-        All Users: {doctors?.length < 10 && "0"}
+        All Doctors: {doctors?.length < 10 && "0"}
         {doctors?.length}
       </h1>
       <div className="overflow-x-auto">

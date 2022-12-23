@@ -30,7 +30,7 @@ const MyAppointment = () => {
   }, [user, navigate]);
 
   return (
-    <div className="px-5">
+    <section className="px-5">
       <h1 className="text-2xl font-bold mt-11 mb-5">My Appointment {appointments.length}</h1>
       <div className="overflow-x-auto">
         <table className="table w-full">
@@ -41,6 +41,7 @@ const MyAppointment = () => {
               <th className="text-base">Treatment</th>
               <th className="text-base">Time</th>
               <th className="text-base">Date</th>
+              <th className="text-base">Price</th>
               <th className="text-base">Payment</th>
             </tr>
           </thead>
@@ -52,6 +53,7 @@ const MyAppointment = () => {
                 <td>{appointment.treatment}</td>
                 <td>{appointment.slot}</td>
                 <td>{appointment.date}</td>
+                <td>${appointment.price}</td>
                 <td>
                   {appointment.price && !appointment.paid && (
                     <Link to={`/dashboard/payment/${appointment._id}`}>
@@ -72,7 +74,7 @@ const MyAppointment = () => {
           </tbody>
         </table>
       </div>
-    </div>
+    </section>
   );
 };
 

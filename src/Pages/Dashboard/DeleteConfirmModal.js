@@ -2,7 +2,7 @@ import React from "react";
 import { toast } from "react-toastify";
 
 const DeleteConfirmModal = ({ deletingDoctor, setDeletingDoctor, refetch }) => {
-  const { name, email } = deletingDoctor;
+  const { name, email, specialty } = deletingDoctor;
 
   const handleDoctorDelete = () => {
     fetch(`http://localhost:5000/doctor/${email}`, {
@@ -26,9 +26,9 @@ const DeleteConfirmModal = ({ deletingDoctor, setDeletingDoctor, refetch }) => {
       <input type="checkbox" id="delete-confirm-modal" className="modal-toggle" />
       <div className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
-          <h3 className="font-bold text-lg text-red-500">Are you sure you want to delete {name} !</h3>
-          <p className="py-4">
-            You've been selected for a chance to get one year of subscription to use Wikipedia for free!
+          <h3 className="font-bold text-xl text-red-500">Are you sure you want to delete {name} !</h3>
+          <p className="py-4 text-lg">
+            Specialty: <span className=" font-semibold">{specialty}</span>
           </p>
           <div className="modal-action">
             <button
