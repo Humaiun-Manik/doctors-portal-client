@@ -5,7 +5,12 @@ const AllBooking = () => {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/all-booking")
+    fetch("http://localhost:5000/all-booking", {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => setBookings(data));
   }, []);

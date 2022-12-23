@@ -1,14 +1,26 @@
-# Genius Bike Service
+# Doctors Portal
 
-Description
+## Description
+
+### User:
 
 - It's a single page website by using rect,nodejs etc.
 - Its about service booking.
-- Users can booked service from this website.
-- Also, they can collect info about our service.
-- users can booked service by login and add to cart, then proceed to checkout.
+- Users can booked Treatment from this website.
+- Users can booking Appointment by login and confirm schedule, then proceed to checkout.
+- Users can see all appointment dates and slots and pay fees by card.
 
-Live Site Link: https://simple-firebase-auth-69897.web.app
+### Admin:
+
+- Admin can make admin and remove user.
+- Admin can add doctor and remove doctor.
+- Admin can see all bookings.
+
+**Admin login:**
+Email: admin@gmail.com
+Password: 123456
+
+#### Live Site Link:
 
 #
 
@@ -17,10 +29,8 @@ Technology we use to build this project:
 - JSX
 - NODE.js
 - React.js
-- React bootstrap
-- React FontAwesome
+- Tailwind
 - React hook form
 - React firebase hooks
 - React toastify
-- React helmet
 - MongoDB
