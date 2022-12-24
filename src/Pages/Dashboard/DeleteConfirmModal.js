@@ -5,7 +5,7 @@ const DeleteConfirmModal = ({ deletingDoctor, setDeletingDoctor, refetch }) => {
   const { name, email, specialty } = deletingDoctor;
 
   const handleDoctorDelete = () => {
-    fetch(`http://localhost:5000/doctor/${email}`, {
+    fetch(`https://doctors-portal-sxnn.onrender.com/doctor/${email}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

@@ -13,7 +13,7 @@ const stripePromise = loadStripe(
 const Payment = () => {
   const { id } = useParams();
   const { data: appointment, isLoading } = useQuery(["booking", id], () =>
-    fetch(`http://localhost:5000/booking/${id}`, {
+    fetch(`https://doctors-portal-sxnn.onrender.com/booking/${id}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

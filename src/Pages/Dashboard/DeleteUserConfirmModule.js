@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const DeleteUserConfirmModule = ({ user, setUser, refetch }) => {
   const { _id, email } = user;
   const handleDeleteUser = () => {
-    fetch(`http://localhost:5000/user/${_id}`, {
+    fetch(`https://doctors-portal-sxnn.onrender.com/user/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

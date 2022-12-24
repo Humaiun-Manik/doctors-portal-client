@@ -8,7 +8,7 @@ const useAdmin = (user) => {
     const email = user?.email;
 
     if (email) {
-      fetch(`http://localhost:5000/admin/${email}`)
+      fetch(`https://doctors-portal-sxnn.onrender.com/admin/${email}`)
         .then((res) => res.json())
         .then((data) => {
           setAdmin(data.admin);

@@ -15,7 +15,7 @@ const AddDoctor = () => {
   const imageStorageKey = "adac0b68c11c7d3ec0968f2e2162f670";
 
   const { data: services, isLoading } = useQuery("services", () =>
-    fetch("http://localhost:5000/treatment").then((res) => res.json())
+    fetch("https://doctors-portal-sxnn.onrender.com/treatment").then((res) => res.json())
   );
 
   const onSubmit = async (data) => {
@@ -38,7 +38,7 @@ const AddDoctor = () => {
             photo: img,
           };
           // send doctor to database
-          fetch("http://localhost:5000/doctor", {
+          fetch("https://doctors-portal-sxnn.onrender.com/doctor", {
             method: "POST",
             headers: {
               "content-type": "application/json",

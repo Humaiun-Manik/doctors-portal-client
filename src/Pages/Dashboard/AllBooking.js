@@ -5,7 +5,7 @@ const AllBooking = () => {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/all-booking", {
+    fetch("https://doctors-portal-sxnn.onrender.com/all-booking", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
